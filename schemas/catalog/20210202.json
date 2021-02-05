@@ -1,0 +1,191 @@
+{
+    "$id": "http://catalog.works/schemas/CatalogMetadata.json",
+    "type": "object",
+    "title": "Catalog20210202",
+    "description": "This schema describes version 20210202 of the Catalog Metadata Standard",
+    "properties": {
+        "body": {
+            "type": "object",
+            "description": "Descriptive metadata properties of a Catalog record",
+            "examples": [
+                {
+                    "version": "catalog-20210202",
+                    "title": "1/1",
+                    "artist": "Brian Eno",
+                    "description": "From 'Ambient 1: Music for Airports' (1978)",
+                    "duration": 1040000,
+                    "mimeType": "audio/aif",
+                    "artwork": {
+                        "isNft": false,
+                        "uri": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1",
+                        "hash": "TODO",
+                        "mimeType": "image/jpg",
+                        "network": null,
+                        "contractAddress": null,
+                        "tokenId": null
+                    }
+                }
+            ],
+            "required": [
+                "version",
+                "title",
+                "artist",
+                "description",
+                "duration",
+                "mimeType",
+                "artwork"
+            ],
+            "properties": {
+                "version": {
+                    "type": "string",
+                    "description": "This property defines the calendar version of the schema so that consumers can correctly parse the json",
+                    "examples": ["catalog-20210202"]
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Title of the track",
+                    "examples": ["1/1"]
+                },
+                "artist": {
+                    "type": "string",
+                    "description": "Name of the artist who created the track",
+                    "examples": ["Brian Eno"]
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An optional property for describing the track",
+                    "examples": ["From 'Ambient 1: Music for Airports' (1978)"]
+                },
+                "duration": {
+                    "type": "integer",
+                    "description": "Length of the audio file in milliseconds",
+                    "examples": [1040000]
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "MimeType of the audio file. Only lossless formats (aif, wav, flac) are supported.",
+                    "examples": ["audio/aif"]
+                },
+                "artwork": {
+                    "type": "object",
+                    "description": "MimeType of the audio file. Only lossless formats (aif, wav, flac) are supported.",
+                    "required": [
+                        "isNft",
+                        "uri",
+                        "hash",
+                        "mimeType",
+                        "chainId",
+                        "contractAddress",
+                        "tokenId"
+                    ],
+                    "examples": [
+                        {
+                            "isNft": false,
+                            "uri": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1",
+                            "hash": "hash",
+                            "mimeType": "image/jpg",
+                            "chainId": null,
+                            "contractAddress": null,
+                            "tokenId": null
+                        }
+                    ],
+                    "properties": {
+                        "isNft": {
+                            "type": "boolean",
+                            "description": "Denotes whether the artwork is its own NFT or is embedded into the Catalog record",
+                            "examples": [true, false]
+                        },
+                        "uri": {
+                            "type": "string",
+                            "description": "Pointer to the cover art for the record. This can only be either a http/https URI or zNFT ID.",
+                            "examples": [null, "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1"]
+                        },
+                        "hash": {
+                            "type": "string",
+                            "description": "SHA-256 hash of the cover art at the time of mint",
+                            "examples": [null, "TODO"]
+                        },
+                        "mimeType": {
+                            "type": "string",
+                            "description": "MimeType of the cover art",
+                            "examples": [null, "image/jpg", "image/png"]
+                        },
+                        "chainId": {
+                            "type": "integer",
+                            "description": "Ethereum network that the cover art NFT exists on",
+                            "examples": [null, 1, 4]
+                        },
+                        "contractAddress": {
+                            "type": "string",
+                            "description": "Address of the factory contract that was used to mint the cover art NFT",
+                            "examples": [null, "0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7", "0x7C2668BD0D3c050703CEcC956C11Bd520c26f7d4"]
+                        },
+                        "tokenId": {
+                            "type": "integer",
+                            "description": "Token ID of the cover art NFT",
+                            "examples": [null, 69, 420]
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "seal": {
+            "type": "object",
+            "description": "Information used to verify the authenticity of the record",
+            "examples": [
+                {
+                    "signature": "TODO",
+                    "publicKey": "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+                }
+            ],
+            "required": [
+                "signature",
+                "publicKey"
+            ],
+            "properties": {
+                "signature": {
+                    "type": "string",
+                    "description": "The result of the Catalog public key signing the body of the record metadata",
+                    "examples": ["TODO"]
+                },
+                "publicKey": {
+                    "type": "string",
+                    "description": "Catalog's public key used to sign the record metadata",
+                    "examples": ["0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"]
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "examples": [
+        {
+            "body": {
+                "version": "catalog-20210202",
+                "title": "1/1",
+                "artist": "Brian Eno",
+                "description": "From 'Ambient 1: Music for Airports' (1978)",
+                "duration": 1040000,
+                "mimeType": "audio/aif",
+                "artwork": {
+                    "isNft": false,
+                    "uri": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1",
+                    "hash": "TODO",
+                    "mimeType": "image/jpg",
+                    "chainId": null,
+                    "contractAddress": null,
+                    "tokenId": null
+                }
+            },
+            "seal": {
+                "signature": "TODO",
+                "publicKey": "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+            }
+        }
+    ],
+    "required": [
+        "body",
+        "seal"
+    ],
+    "additionalProperties": false
+}
