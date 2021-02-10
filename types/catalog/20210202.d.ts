@@ -36,7 +36,7 @@ export interface Catalog20210202 {
     /**
      * MimeType of the audio file. Only lossless formats (aif, wav, flac) are supported.
      */
-    mimeType: "audio/aif" | "audio/flac" | "audio/wav";
+    mimeType: "audio/x-aiff" | "audio/aiff" | "audio/wav" | "audio/x-wav" | "audio/flac";
     /**
      * Denotes whether the artwork is a separate NFT or is embedded into the Catalog record
      */

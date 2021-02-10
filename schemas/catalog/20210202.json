@@ -14,7 +14,7 @@
                     "artist": "Brian Eno",
                     "description": "From 'Ambient 1: Music for Airports' (1978)",
                     "duration": 1040.1,
-                    "mimeType": "audio/aif",
+                    "mimeType": "audio/aiff",
                     "isArtworkNft": false,
                     "artworkDetail": {
                         "uri": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1",
@@ -67,8 +67,8 @@
                 "mimeType": {
                     "type": "string",
                     "description": "MimeType of the audio file. Only lossless formats (aif, wav, flac) are supported.",
-                    "enum": ["audio/aif", "audio/flac", "audio/wav"],
-                    "examples": ["audio/aif"]
+                    "enum": ["audio/x-aiff", "audio/aiff", "audio/wav", "audio/x-wav", "audio/flac"],
+                    "examples": ["audio/aiff"]
                 },
                 "isArtworkNft": {
                     "type": "boolean",
@@ -187,7 +187,7 @@
                 "artist": "Brian Eno",
                 "description": "From 'Ambient 1: Music for Airports' (1978)",
                 "duration": 1040.1,
-                "mimeType": "audio/aif",
+                "mimeType": "audio/aiff",
                 "isArtworkNft": false,
                 "artworkDetail": {
                     "uri": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1",
@@ -208,7 +208,7 @@
                 "artist": "Brian Eno",
                 "description": "From 'Ambient 1: Music for Airports' (1978)",
                 "duration": 1040.1,
-                "mimeType": "audio/aif",
+                "mimeType": "audio/aiff",
                 "isArtworkNft": true,
                 "artworkDetail": null,
                 "artworkDetailNft": {

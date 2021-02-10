@@ -66,7 +66,7 @@ describe('schemas', () => {
             title: "Never Gonna Give You Up",
             description: "An unexpected classic",
             duration: 213,
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
@@ -91,7 +91,7 @@ describe('schemas', () => {
             description: "An unexpected classic",
             duration: 213,
             grammyNominated: "I wish",
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
@@ -146,7 +146,7 @@ describe('schemas', () => {
             artist: "Rick Astley",
             description: "An unexpected classic",
             duration: 0,
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
@@ -174,7 +174,7 @@ describe('schemas', () => {
             artist: "Rick Astley",
             description: "An unexpected classic",
             duration: "213",
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
@@ -201,7 +201,7 @@ describe('schemas', () => {
             artist: "Rick Astley",
             description: "An unexpected classic",
             duration: "213",
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: true,
             artworkDetail: null,
             artworkDetailNft: {
@@ -228,7 +228,7 @@ describe('schemas', () => {
             artist: "Rick Astley",
             description: "An unexpected classic",
             duration: "213",
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: true,
             artworkDetail: null,
             artworkDetailNft: {
@@ -256,7 +256,7 @@ describe('schemas', () => {
             artist: "Rick Astley",
             description: "An unexpected classic",
             duration: 213,
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
@@ -284,7 +284,7 @@ describe('schemas', () => {
             artist: "",
             description: "An unexpected classic",
             duration: 213,
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
@@ -312,7 +312,7 @@ describe('schemas', () => {
             artist: "Rick Astley",
             description: "An unexpected classic",
             duration: 213,
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
@@ -339,7 +339,7 @@ describe('schemas', () => {
             artist: "Rick Astley",
             description: "An unexpected classic",
             duration: 213,
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
@@ -367,7 +367,7 @@ describe('schemas', () => {
             artist: "Rick Astley",
             description: "An unexpected classic",
             duration: 213,
-            mimeType: "audio/aif",
+            mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
