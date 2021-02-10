@@ -28,25 +28,25 @@ export interface Catalog20210202 {
     /**
      * An optional property for describing the track
      */
-    description: string;
+    description: string | null;
     /**
-     * Length of the audio file in milliseconds
+     * Length of the audio file in seconds (must be > 1ms)
      */
     duration: number;
     /**
      * MimeType of the audio file. Only lossless formats (aif, wav, flac) are supported.
      */
-    mimeType: string;
+    mimeType: "audio/aif" | "audio/flac" | "audio/wav";
     /**
-     * MimeType of the audio file. Only lossless formats (aif, wav, flac) are supported.
+     * Denotes whether the artwork is a separate NFT or is embedded into the Catalog record
      */
-    artwork: {
+    isArtworkNft: boolean;
+    /**
+     * Information about the cover art if it isn't an NFT
+     */
+    artworkDetail: {
       /**
-       * Denotes whether the artwork is its own NFT or is embedded into the Catalog record
-       */
-      isNft: boolean;
-      /**
-       * Pointer to the cover art for the record. This can only be either a http/https URI or zNFT ID.
+       * Pointer to the cover art for the record (must be a valid http/https url)
        */
       uri: string;
       /**
@@ -56,11 +56,16 @@ export interface Catalog20210202 {
       /**
        * MimeType of the cover art
        */
-      mimeType: string;
+      mimeType: "image/jpeg" | "image/pjpeg" | "image/png";
+    } | null;
+    /**
+     * Information about the cover art if it is an NFT
+     */
+    artworkDetailNft: {
       /**
        * Ethereum network that the cover art NFT exists on
        */
-      chainId: number;
+      chainId: 1 | 4;
       /**
        * Address of the factory contract that was used to mint the cover art NFT
        */
@@ -69,8 +74,7 @@ export interface Catalog20210202 {
        * Token ID of the cover art NFT
        */
       tokenId: number;
-      [k: string]: unknown;
-    };
+    } | null;
   };
   /**
    * Information used to verify the authenticity of the record
@@ -83,6 +87,6 @@ export interface Catalog20210202 {
     /**
      * Catalog's public key used to sign the record metadata
      */
-    publicKey: string;
+    publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952";
   };
 }

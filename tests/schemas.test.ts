@@ -58,7 +58,7 @@ describe('schemas', () => {
   })
   describe('catalog', () => {
     describe('20210202', () => {
-      it('requires all keys', () => { // todo - test body & signature as well
+      it('requires all keys', () => {
         const validator = new Validator('catalog-20210202')
         const json = {
           body: {
@@ -70,7 +70,7 @@ describe('schemas', () => {
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
-              hash: "TODO",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
@@ -95,7 +95,34 @@ describe('schemas', () => {
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
-              hash: "TODO",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
+              mimeType: "image/png",
+            },
+            artworkDetailNft: null
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(false)
+      })
+      it('does not allow forbidden audio file formats', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+           body: {
+            version: "catalog-20210202",
+            title: "Never Gonna Give You Up",
+            artist: "Rick Astley",
+            description: "An unexpected classic",
+            duration: 213,
+            mimeType: "audio/mp3",
+            isArtworkNft: false,
+            artworkDetail: {
+              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
@@ -110,11 +137,38 @@ describe('schemas', () => {
         expect(result).toBe(false)
       })
 
-// TODO - check fields are of proper type
-      it('requires properties are of the correct type', () => { // ? does duration need to be a string too?
+      it('requires duration to be > 1ms', () => {
         const validator = new Validator('catalog-20210202')
         const json = {
-        body: {
+          body: {
+            version: "catalog-20210202",
+            title: "Never Gonna Give You Up",
+            artist: "Rick Astley",
+            description: "An unexpected classic",
+            duration: 0,
+            mimeType: "audio/aif",
+            isArtworkNft: false,
+            artworkDetail: {
+              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
+              mimeType: "image/png",
+            },
+            artworkDetailNft: null
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(false)
+      })
+
+      it('requires properties are of the correct type (duration)', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+          body: {
             version: "catalog-20210202",
             title: "Never Gonna Give You Up",
             artist: "Rick Astley",
@@ -124,7 +178,89 @@ describe('schemas', () => {
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
-              hash: "TODO",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
+              mimeType: "image/png",
+            },
+            artworkDetailNft: null
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(false)
+      })
+      it('requires properties are of the correct type (tokenId)', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+          body: {
+            version: "catalog-20210202",
+            title: "Never Gonna Give You Up",
+            artist: "Rick Astley",
+            description: "An unexpected classic",
+            duration: "213",
+            mimeType: "audio/aif",
+            isArtworkNft: true,
+            artworkDetail: null,
+            artworkDetailNft: {
+              "chainId": 1,
+              "contractAddress": "0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7",
+              "tokenId": "69"
+            }
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(false)
+      })
+      it('does not allow ethereum networks that are not mainnet or rinkeby', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+          body: {
+            version: "catalog-20210202",
+            title: "Never Gonna Give You Up",
+            artist: "Rick Astley",
+            description: "An unexpected classic",
+            duration: "213",
+            mimeType: "audio/aif",
+            isArtworkNft: true,
+            artworkDetail: null,
+            artworkDetailNft: {
+              "chainId": 2,
+              "contractAddress": "0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7",
+              "tokenId": 69
+            }
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(false)
+      })
+
+      it('does not allow an empty title field', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+          body: {
+            version: "catalog-20210202",
+            title: "",
+            artist: "Rick Astley",
+            description: "An unexpected classic",
+            duration: 213,
+            mimeType: "audio/aif",
+            isArtworkNft: false,
+            artworkDetail: {
+              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
@@ -139,7 +275,35 @@ describe('schemas', () => {
         expect(result).toBe(false)
       })
 
-      it('validates a valid Catalog metadata schema', () => {
+      it('does not allow an empty artist field', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+          body: {
+            version: "catalog-20210202",
+            title: "Never Gonna Give You Up",
+            artist: "",
+            description: "An unexpected classic",
+            duration: 213,
+            mimeType: "audio/aif",
+            isArtworkNft: false,
+            artworkDetail: {
+              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
+              mimeType: "image/png",
+            },
+            artworkDetailNft: null
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(false)
+      })
+
+      it('requires the public key to be the Catalog wallet address', () => {
         const validator = new Validator('catalog-20210202')
         const json = {
           body: {
@@ -152,10 +316,92 @@ describe('schemas', () => {
             isArtworkNft: false,
             artworkDetail: {
               uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
-              hash: "TODO",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0x0000000000000000000000000000000000000000"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(false)
+      })
+      it('requires the artwork hash to be 66 characters', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+          body: {
+            version: "catalog-20210202",
+            title: "Never Gonna Give You Up",
+            artist: "Rick Astley",
+            description: "An unexpected classic",
+            duration: 213,
+            mimeType: "audio/aif",
+            isArtworkNft: false,
+            artworkDetail: {
+              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              hash: "0x",
+              mimeType: "image/png",
+            },
+            artworkDetailNft: null
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(false)
+      })
+
+      it('validates a valid Catalog metadata schema (with non-NFT cover art)', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+          body: {
+            version: "catalog-20210202",
+            title: "Never Gonna Give You Up",
+            artist: "Rick Astley",
+            description: "An unexpected classic",
+            duration: 213,
+            mimeType: "audio/aif",
+            isArtworkNft: false,
+            artworkDetail: {
+              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
+              mimeType: "image/png",
+            },
+            artworkDetailNft: null
+          },
+          seal: {
+            signature: "TODO",
+            publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
+          }
+        }
+
+        const result = validator.validate(json)
+        expect(result).toBe(true)
+      })
+      it('validates a valid Catalog metadata schema (with NFT cover art)', () => {
+        const validator = new Validator('catalog-20210202')
+        const json = {
+          body: {
+            version: "catalog-20210202",
+            title: "Never Gonna Give You Up",
+            artist: "Rick Astley",
+            description: null,
+            duration: 213.1,
+            mimeType: "audio/wav",
+            isArtworkNft: false,
+            artworkDetail: null,
+            artworkDetailNft: {
+              "chainId": 1,
+              "contractAddress": "0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7",
+              "tokenId": 69
+            }
           },
           seal: {
             signature: "TODO",

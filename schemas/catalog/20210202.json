@@ -39,17 +39,18 @@
                 "version": {
                     "type": "string",
                     "description": "This property defines the calendar version of the schema so that consumers can correctly parse the json",
-                    "enum": ["catalog-20210202"],
                     "examples": ["catalog-20210202"]
                 },
                 "title": {
                     "type": "string",
                     "description": "Title of the track",
+                    "minLength": 1,
                     "examples": ["1/1"]
                 },
                 "artist": {
                     "type": "string",
                     "description": "Name of the artist who created the track",
+                    "minLength": 1,
                     "examples": ["Brian Eno"]
                 },
                 "description": {
@@ -59,7 +60,8 @@
                 },
                 "duration": {
                     "type": "number",
-                    "description": "Length of the audio file in seconds",
+                    "description": "Length of the audio file in seconds (must be > 1ms)",
+                    "minimum": 0.001,
                     "examples": [1040.1]
                 },
                 "mimeType": {
@@ -91,20 +93,24 @@
                     "properties": {
                         "uri": {
                             "type": "string",
-                            "description": "Pointer to the cover art for the record (must begin with http/https)",
+                            "description": "Pointer to the cover art for the record (must be a valid http/https url)",
                             "examples": ["https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1"]
                         },
                         "hash": {
                             "type": "string",
                             "description": "SHA-256 hash of the cover art at the time of mint",
+                            "minLength": 66,
+                            "maxLength": 66,
                             "examples": ["TODO"]
                         },
                         "mimeType": {
                             "type": "string",
                             "description": "MimeType of the cover art",
-                            "examples": ["image/jpg", "image/png"]
+                            "enum": ["image/jpeg", "image/pjpeg", "image/png"],
+                            "examples": ["image/jpeg", "image/pjpeg", "image/png"]
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "artworkDetailNft": {
                     "type": ["object", "null"],
@@ -134,9 +140,11 @@
                         "tokenId": {
                             "type": "integer",
                             "description": "Token ID of the cover art NFT",
+                            "minimum": 0,
                             "examples": [69, 420]
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 }
             },
             "additionalProperties": false
@@ -158,6 +166,7 @@
                 "signature": {
                     "type": "string",
                     "description": "The result of the Catalog public key signing the body of the record metadata",
+                    "minLength": 1,
                     "examples": ["TODO"]
                 },
                 "publicKey": {
