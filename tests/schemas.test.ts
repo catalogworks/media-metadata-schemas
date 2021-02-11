@@ -69,7 +69,7 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
@@ -94,14 +94,14 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -121,14 +121,14 @@ describe('schemas', () => {
             mimeType: "audio/mp3",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -149,14 +149,14 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -177,14 +177,14 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -211,7 +211,7 @@ describe('schemas', () => {
             }
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -238,7 +238,7 @@ describe('schemas', () => {
             }
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -259,14 +259,14 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -287,14 +287,14 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -315,14 +315,14 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0x0000000000000000000000000000000000000000"
           }
         }
@@ -342,14 +342,14 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0x",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -370,14 +370,14 @@ describe('schemas', () => {
             mimeType: "audio/aiff",
             isArtworkNft: false,
             artworkDetail: {
-              uri: "https://f4.bcbits.com/img/a0581187129_10.jpg",
+              uri: "https://www.rockcellarmagazine.com/wp-content/uploads/2019/03/rick-astley-never-gonna-art.jpg",
               hash: "0xc6006808f8677cbefa783d08e9064d252fbb5c8737978b52db5fdf80db42b5e9",
               mimeType: "image/png",
             },
             artworkDetailNft: null
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }
@@ -404,7 +404,7 @@ describe('schemas', () => {
             }
           },
           seal: {
-            signature: "TODO",
+            signature: "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
             publicKey: "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
           }
         }

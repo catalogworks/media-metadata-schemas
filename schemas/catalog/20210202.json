@@ -13,13 +13,13 @@
                     "title": "1/1",
                     "artist": "Brian Eno",
                     "description": "From 'Ambient 1: Music for Airports' (1978)",
-                    "duration": 1040.1,
-                    "mimeType": "audio/aiff",
+                    "duration": 996.9,
+                    "mimeType": "audio/wav",
                     "isArtworkNft": false,
                     "artworkDetail": {
-                        "uri": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1",
-                        "hash": "TODO",
-                        "mimeType": "image/jpg"
+                        "uri": "https://gateway.pinata.cloud/ipfs/QmfHkU5PJLg8ieRBYQsQXrURcyFq9GamMW8326L4pVVvs8",
+                        "hash": "0x4e5cb83646457a4150262db94b56a68c69df4a3cafd5bc089f4b3763f44d3714",
+                        "mimeType": "image/jpeg"
                     },
                     "artworkDetailNft": null
                 }
@@ -62,13 +62,13 @@
                     "type": "number",
                     "description": "Length of the audio file in seconds (must be > 1ms)",
                     "minimum": 0.001,
-                    "examples": [1040.1]
+                    "examples": [996.9]
                 },
                 "mimeType": {
                     "type": "string",
                     "description": "MimeType of the audio file. Only lossless formats (aif, wav, flac) are supported.",
                     "enum": ["audio/x-aiff", "audio/aiff", "audio/wav", "audio/x-wav", "audio/flac"],
-                    "examples": ["audio/aiff"]
+                    "examples": ["audio/wav"]
                 },
                 "isArtworkNft": {
                     "type": "boolean",
@@ -85,23 +85,23 @@
                     ],
                     "examples": [
                          {
-                            "uri": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1",
+                            "uri": "https://gateway.pinata.cloud/ipfs/QmfHkU5PJLg8ieRBYQsQXrURcyFq9GamMW8326L4pVVvs8",
                             "hash": "hash",
-                            "mimeType": "image/jpg"
+                            "mimeType": "image/jpeg"
                         }
                     ],
                     "properties": {
                         "uri": {
                             "type": "string",
                             "description": "Pointer to the cover art for the record (must be a valid http/https url)",
-                            "examples": ["https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1"]
+                            "examples": ["https://gateway.pinata.cloud/ipfs/QmfHkU5PJLg8ieRBYQsQXrURcyFq9GamMW8326L4pVVvs8"]
                         },
                         "hash": {
                             "type": "string",
                             "description": "SHA-256 hash of the cover art at the time of mint",
                             "minLength": 66,
                             "maxLength": 66,
-                            "examples": ["TODO"]
+                            "examples": ["0x4e5cb83646457a4150262db94b56a68c69df4a3cafd5bc089f4b3763f44d3714"]
                         },
                         "mimeType": {
                             "type": "string",
@@ -154,7 +154,7 @@
             "description": "Information used to verify the authenticity of the record",
             "examples": [
                 {
-                    "signature": "TODO",
+                    "signature": "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
                     "publicKey": "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
                 }
             ],
@@ -166,8 +166,8 @@
                 "signature": {
                     "type": "string",
                     "description": "The result of the Catalog public key signing the body of the record metadata",
-                    "minLength": 1,
-                    "examples": ["TODO"]
+                    "minLength": 3,
+                    "examples": ["0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b"]
                 },
                 "publicKey": {
                     "type": "string",
@@ -186,18 +186,18 @@
                 "title": "1/1",
                 "artist": "Brian Eno",
                 "description": "From 'Ambient 1: Music for Airports' (1978)",
-                "duration": 1040.1,
-                "mimeType": "audio/aiff",
+                "duration": 996.9,
+                "mimeType": "audio/wav",
                 "isArtworkNft": false,
                 "artworkDetail": {
-                    "uri": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.normanrecords.com%2Fartwork%2Fmedium%2F90%2F120090-brian-eno-ambient-1-music-for-airports.jpg&f=1&nofb=1",
-                    "hash": "TODO",
-                    "mimeType": "image/jpg"
+                    "uri": "https://gateway.pinata.cloud/ipfs/QmfHkU5PJLg8ieRBYQsQXrURcyFq9GamMW8326L4pVVvs8",
+                    "hash": "0x4e5cb83646457a4150262db94b56a68c69df4a3cafd5bc089f4b3763f44d3714",
+                    "mimeType": "image/jpeg"
                 },
                 "artworkDetailNft": null
             },
             "seal": {
-                "signature": "TODO",
+                "signature": "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
                 "publicKey": "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
             }
         },
@@ -207,8 +207,8 @@
                 "title": "1/1",
                 "artist": "Brian Eno",
                 "description": "From 'Ambient 1: Music for Airports' (1978)",
-                "duration": 1040.1,
-                "mimeType": "audio/aiff",
+                "duration": 996.9,
+                "mimeType": "audio/wav",
                 "isArtworkNft": true,
                 "artworkDetail": null,
                 "artworkDetailNft": {
@@ -218,7 +218,7 @@
                 }
             },
             "seal": {
-                "signature": "TODO",
+                "signature": "0x2d7c0dc8a9252bb8cf0e654c58badb0585f41941270765e46c238a1692243e6d128bbaf072c2886348d49498794365f60f1793a758a7d1c281affc9c81de61ae1b",
                 "publicKey": "0xc236541380fc0C2C05c2F2c6c52a21ED57c37952"
             }
         }
